@@ -1,123 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TLC SunPaws Rescue</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Arial", sans-serif;
-            background-color: #F6F4EE;
-            color: #3D3A34;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #D8E2D0;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #B7C5B1;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 600;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #3D3A34;
-        }
-
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #94A88A;
-            color: #fff;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        footer {
-            background: #D8E2D0;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-            border-top: 2px solid #B7C5B1;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TLC SunPaws Rescue — Home</title>
+  <meta name="description" content="TLC SunPaws Rescue — A warm, sunny sanctuary rescuing dogs, cats, and every animal in need in Mexico. Donate, shop, sponsor, or volunteer.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --sage:#A9D2B8;
+      --forest:#2E6B48;
+      --cream:#FFF8F0;
+      --sun:#FFD27D;
+      --char:#22312B;
+      --muted:#6D6D6D;
+      --accent:#D9644A;
+      --max-width:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--cream);color:var(--char);line-height:1.5}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--sun),var(--sage));display:flex;align-items:center;justify-content:center;color:var(--forest);font-weight:700;font-family:'Pacifico';box-shadow:0 8px 22px rgba(46,107,72,0.08);font-size:20px}
+    nav a{margin-left:18px;text-decoration:none;color:var(--char);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+    .hero h1{font-family:'Pacifico',serif;font-size:44px;margin:0;color:var(--forest)}
+    .lead{color:var(--muted);font-size:16px}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--forest);color:white}
+    .btn-ghost{background:transparent;border:2px solid var(--forest);color:var(--forest)}
+    .card{background:white;padding:16px;border-radius:14px;box-shadow:0 8px 28px rgba(34,49,43,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .animal{display:flex;gap:12px;align-items:center}
+    .animal img{width:96px;height:96px;border-radius:12px;object-fit:cover}
+    footer{padding:28px 0;color:var(--muted)}
+    .two-col{display:flex;gap:18px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(46,107,72,0.08);color:var(--forest);font-weight:700}
+    @media(max-width:880px){.hero{grid-template-columns:1fr;}.logo{width:64px;height:64px}}
+    form{display:grid;gap:8px}
+    input,textarea,select{padding:10px;border-radius:10px;border:1px solid #eee}
+    .muted-sm{font-size:13px;color:var(--muted)}
+    .highlight{background:linear-gradient(90deg, rgba(255,210,125,0.18), rgba(169,210,184,0.06));padding:10px;border-radius:10px}
+  </style>
 </head>
-
 <body>
-
+  <div class="container">
     <header>
-        <h1>TLC SunPaws Rescue</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Donate</a>
-            <a href="#">Shop</a>
-        </nav>
+      <div class="brand">
+        <div class="logo">TLC</div>
+        <div>
+          <div style="font-weight:800">TLC SunPaws Rescue</div>
+          <div style="font-size:13px;color:var(--muted)">A soft, sunny sanctuary for every animal in need</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#stories">Stories</a>
+        <a href="#donate">Donate</a>
+        <a href="#shop">Shop</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <section class="hero">
-        <h2>Helping One Street Pup at a Time</h2>
-        <p>Feeding, healing, and rescuing Mexico’s street dogs — and building a sanctuary ranch with love, compassion, and community.</p>
-        <a href="#" class="button">Donate Now</a>
-    </section>
+    <main id="home">
+      <section class="hero">
+        <div>
+          <div class="pill">New — Sponsor a Senior Dog</div>
+          <h1>Warm, Earthy Sanctuary — Soft + Sunny</h1>
+          <p class="lead">We rescue, provide medical care for, foster, and find forever homes for animals in need. Helping every animal feel love and care — whether they need a soft place to land, a second chance, or peace in their final days. We welcome all animals, and hold a special place in our hearts for older dogs and those with special needs.</p>
 
-    <section class="section">
-        <h3>Our Mission</h3>
-        <p>
-            TLC SunPaws Rescue is dedicated to helping abandoned, injured, and hungry dogs in Mexico.
-            From daily feedings to emergency rescues, medical care, and future sanctuary plans — every act of kindness creates hope.
-        </p>
-    </section>
+          <div class="cta">
+            <button class="btn btn-primary">Donate to Help</button>
+            <button class="btn btn-ghost">Shop Coach &amp; Co.</button>
+          </div>
 
-    <section class="section">
-        <h3>Support the Mission</h3>
-        <p>
-            You can make a life-changing impact for a street pup today.
-        </p>
-        <ul>
-            <li>🐾 Donate for food & medical care</li>
-            <li>🐾 Shop at Coach & Co. to support rescues</li>
-            <li>🐾 Become a monthly supporter</li>
-            <li>🐾 Share our pups & stories</li>
-        </ul>
-    </section>
+          <section style="margin-top:18px">
+            <div class="two-col">
+              <div class="card" style="flex:1">
+                <strong>What we do</strong>
+                <p class="muted-sm" style="margin-top:6px">Street rescues • Emergency medical care • Foster & adoption • Senior dog care • Spay/neuter • Community outreach (car kits, food drops)</p>
+              </div>
+              <div class="card" style="flex:1">
+                <strong>Our big dream</strong>
+                <p class="muted-sm" style="margin-top:6px">A permanent sanctuary & grooming center, a local rescue shop in Mexico + online (Coach &amp; Co.), on-site vet partnerships, volunteer programs, and an app to help report animals in need.</p>
+              </div>
+            </div>
+          </section>
+        </div>
 
-    <footer>
-        <p>© 2025 TLC SunPaws Rescue • All Rights Reserved</p>
+        <aside class="card">
+          <h3 style="margin-top:0">Featured Rescues</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+
+            <!-- Replace these image URLs with REAL hosted URLs later -->
+            <div class="animal">
+              <img src="https://placekitten.com/200/200" alt="Sol before"/>
+              <div>
+                <strong>Sol — Rescued near Bucerías</strong>
+                <div style="font-size:13px;color:var(--muted)">Wounded and shy — now playful and eating well.</div>
+              </div>
+            </div>
+
+            <div class="animal">
+              <img src="https://via.placeholder.com/200x200?text=Luna+After" alt="Luna after">
+              <div>
+                <strong>Luna — Fostered &amp; Adopted</strong>
+                <div style="font-size:13px;color:var(--muted)">From malnourished to a loving home.</div>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" style="margin-top:24px">
+        <h2>About TLC SunPaws Rescue</h2>
+        <p class="muted-sm">TLC SunPaws Rescue began with a single feeding route and the belief that small daily actions create big change. Based in Mexico, our mission is to rescue animals in need — dogs, cats, and every other soul who needs a soft place to land.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <div class="card">
+            <h4 style="margin:6px 0">Values</h4>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Compassion for all animals</li>
+              <li>Transparent use of donations</li>
+              <li>Community-led rescue & care</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="margin:6px 0">Vision</h4>
+            <p class="muted-sm" style="margin:0">A healing sanctuary with veterinary partnerships, a grooming center, an on-site rescue shop in Mexico and online (Coach &amp; Co.), volunteer stays, and outreach programs like car care kits to help passersby feed or rescue animals safely.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How you can help -->
+      <section id="services" style="margin-top:24px">
+        <h2>How You Can Help</h2>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <strong>Donate for food & medical care</strong>
+            <p class="muted-sm" style="margin-top:6px">One-time or recurring donations help feed street animals and cover urgent vet bills.</p>
+          </div>
+          <div class="card">
+            <strong>Shop at Coach &amp; Co.</strong>
+            <p class="muted-sm" style="margin-top:6px">Buy rescue gear — a portion of proceeds funds meals, medicine, and shelter improvements.</p>
+          </div>
+          <div class="card">
+            <strong>Car Care Kits</strong>
+            <p class="muted-sm" style="margin-top:6px">Keep kits in your car to safely feed or help strays. Choose dog, cat, or both.</p>
+          </div>
+          <div class="card">
+            <strong>Volunteer & Report</strong>
+            <p class="muted-sm" style="margin-top:6px">Volunteer locally or report animal sightings. Emergencies are prioritized first.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Donate -->
+      <section id="donate" style="margin-top:24px">
+        <h2>Donate</h2>
+        <div class="card" style="display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start">
+          <div>
+            <p class="muted-sm">Every contribution goes directly to feeding, medical care, transport, and fostering. Monthly breakdowns are posted for transparency.</p>
+            <h4 style="margin-top:8px">Payment Options</h4>
+            <ol style="color:var(--muted)">
+              <li>Stripe / Card</li>
+              <li>Patreon / Ko-fi</li>
+              <li>Shop purchases (Coach &amp; Co.)</li>
+            </ol>
+            <p class="muted-sm" style="margin-top:8px">Sponsor an animal for $25/month for updates + medical support.</p>
+          </div>
+          <aside style="display:flex;flex-direction:column;gap:8px">
+            <strong>Quick Donate</strong>
+            <button class="btn btn-primary">Donate $10</button>
+            <button class="btn btn-primary">Donate $25</button>
+            <button class="btn btn-primary">Donate $50</button>
+            <div class="muted-sm" style="margin-top:8px">Prefer monthly? <a href="#support" style="font-weight:700">Become a Patron</a></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Shop -->
+      <section id="shop" style="margin-top:24px">
+        <h2>Shop — Coach &amp; Co.</h2>
+        <p class="muted-sm">Coach &amp; Co. is our rescue shop — curated items that give back. Each item helps provide food, medical supplies, and sanctuary upgrades.</p>
+      </section>
+
+      <!-- Blog -->
+      <section id="blog" style="margin-top:24px">
+        <h2>From the Field — Blog & How-To</h2>
+        <p class="muted-sm">Weekly guides, rescue stories, urgent needs, and how to help animals safely and responsibly.</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" style="margin-top:24px">
+        <h2>Contact &amp; Volunteer</h2>
+        <div class="card" style="display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start">
+          <div>
+            <p class="muted-sm">Report a sighting (photo + location) or apply to volunteer. Emergencies are prioritized.</p>
+            <form name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact">
+              <input name="name" type="text" placeholder="Your name" required>
+              <input name="email" type="email" placeholder="Email" required>
+              <select name="report_type"><option>Report: Injured animal</option><option>Report: Stray</option><option>Volunteer</option></select>
+              <textarea name="message" rows="4" placeholder="Message, include location + photo link"></textarea>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+          <aside>
+            <strong>Quick info</strong>
+            <div class="muted-sm" style="margin-top:8px">Email: hello@tlcsunpaws.org<br>WhatsApp: +52 322 XXX XXXX<br>Location: Riviera Nayarit, Mexico</div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="margin-top:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-weight:800">TLC SunPaws Rescue</div>
+        <div style="color:var(--muted)">© 2025 TLC SunPaws Rescue — All rights reserved</div>
+        <div style="color:var(--muted)">Follow: Instagram | Facebook | TikTok</div>
+      </div>
     </footer>
 
+  </div>
 </body>
 </html>
